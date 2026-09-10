@@ -21,7 +21,7 @@ def test_책을_저장하고_다시_조회할_수_있다():
         db.add(book)
         db.commit()
         # DB가 자동으로 채운 id, created_at 등을 다시 읽어온다.
-        db.refresh()
+        db.refresh(book)
 
         saved = db.get(Book, book.id)
         assert saved is not None
